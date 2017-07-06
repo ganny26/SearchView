@@ -1,29 +1,27 @@
 # SearchView
+Do not fork it. It will be changed to working version 5.0 in few days !!!
 
-Next version 5.0 will be ASAP on jCenter.
-
-Persistent SearchView Library like Play Store.  
-Check the [sample project](https://github.com/lapism/SearchView/tree/master/sample/src/main/java/com/lapism/searchview/sample) very thoroughly !!!  
+Persistent SearchView Library from Play Store.  
 Features: Material Design, Toolbar / Menu item version, History, Styling.  
+
 Google Material Design Pattern:  
-https://www.google.com/design/spec/patterns/search.html  
+https://material.io/guidelines/patterns/search.html  
 Version history here:  
 https://bintray.com/lapism/maven/searchview/view  
 Material colors in the project:  
-https://gist.github.com/lapism/3b417142300d9dbde3b4  
-Sample application on:  
-<a href="https://play.google.com/store/apps/details?id=com.lapism.searchview.sample">
-  <img alt="Get it on Google Play"
-       src="https://github.com/lapism/SearchView/blob/master/images/google-play-badge.png" />
-</a>
+https://gist.github.com/lapism/3b417142300d9dbde3b4
 
 # Donations:
+Please support me !  
 
-Please support me if you want.  
-[Paypal](https://www.paypal.me/lapism) <br />
+<a href="https://www.paypal.me/lapism">
+  <img alt="Get it on Google Play"
+       src="https://github.com/lapism/SearchView/blob/master/images/donate.png" />
+</a>
+  
+------------------------------------------------------------------------------------------------------------------------------
 
-**Apps using this library:**
-
+**Apps using this library:**  
 Because I have done firstly this library as a private project, 
 I would like to know if someone of you use my library in your application. 
 If yes, please send me a name of your app and link to Play Store and I will promote your app in Readme.
@@ -47,13 +45,11 @@ If yes, please send me a name of your app and link to Play Store and I will prom
 **Add the dependencies to your gradle file:**
 ```javascript
 dependencies {
-    compile 'com.lapism:searchview:4.0'
+    implementation 'com.lapism:searchview:4.0'
 }
 ```
-
-![Screenshot 1](https://github.com/lapism/SearchView/blob/master/images/image_1.png)
-![Screenshot 2](https://github.com/lapism/SearchView/blob/master/images/image_2.png)
-![Screenshot 3](https://github.com/lapism/SearchView/blob/master/images/image_3.png)
+![Screenshot 1](https://github.com/lapism/SearchView/blob/master/images/image_1.png)  
+![Screenshot 2](https://github.com/lapism/SearchView/blob/master/images/image_2.png)  
 
 **Code:**
 ```java
@@ -65,7 +61,7 @@ SearchView mSearchView = (SearchView) findViewById(R.id.searchView);
 public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
         case R.id.action_search: {
-            mSearchView.show(true/false); // enable or disable animation
+            mSearchView.open(true/false); // enable or disable animation
             return true;
         }
         default:
@@ -82,8 +78,8 @@ public boolean onOptionsItemSelected(MenuItem item) {
     android:layout_height="match_parent" />
 ```
 
-**Versions:**
-
+**Versions:**  
+  
 SearchView identifies its layout style through versions. Currently, there are two values, namely `SearchView.VERSION_TOOLBAR` for the persistent view, and `SearchView.VERSION_MENU_ITEM` for the view that appears on a menuitem press. The version may be defined through `setVersion`.
 
 **Styling SearchView:**
