@@ -10,11 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@SuppressWarnings({"SameParameterValue", "WeakerAccess", "unused"})
+@SuppressWarnings({"WeakerAccess", "SameParameterValue", "unused"})
 public class SearchHistoryTable {
 
     private static int mHistorySize = 2;
-    private static int mConnectionCount = 0;
     private static Integer mCurrentDatabaseKey = null;
     private final SearchHistoryDatabase dbHelper;
     private SQLiteDatabase db;
@@ -25,17 +24,11 @@ public class SearchHistoryTable {
 
     // FOR onResume AND onPause
     public void open() throws SQLException {
-        if (mConnectionCount == 0) {
-            db = dbHelper.getWritableDatabase();
-        }
-        mConnectionCount++;
+        db = dbHelper.getWritableDatabase();
     }
 
     public void close() {
-        mConnectionCount--;
-        if (mConnectionCount == 0) {
-            dbHelper.close();
-        }
+        dbHelper.close();
     }
 
     public void addItem(SearchItem item) {
